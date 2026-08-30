@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+/* Toast positioning fix */
+.Toastify__toast-container--top-center {
+  top: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.Toastify__toast-container--top-center {
+  top: 20px !important;
+}
+
+body {
+  background-image: url("/bg-image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* 🔥 THIS IS IMPORTANT */
+}
