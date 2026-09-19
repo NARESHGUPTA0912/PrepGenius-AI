@@ -360,6 +360,20 @@ The project implements:
 
 ---
 
+## ⚙️ CI/CD
+
+This project uses GitHub Actions for continuous integration.
+
+The backend is automatically built using:
+
+- Java 25
+- Maven
+- Spring Boot
+
+Every push and pull request to the `main` branch triggers the Maven build workflow.
+
+---
+
 ## 📌 Future Improvements
 
 * 🎤 AI voice-based mock interviews
