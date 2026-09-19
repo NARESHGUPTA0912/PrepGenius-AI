@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.config.EnableMongoAuditing;
 public class BackendApplication {
 
 	public static void main(String[] args) {
+		//System.out.println("MONGO_URI = " + System.getenv("MONGO_URI"));
 		SpringApplication.run(BackendApplication.class, args);
 	}
 

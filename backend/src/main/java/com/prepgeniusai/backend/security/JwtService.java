@@ -17,7 +17,18 @@ public class JwtService {
 
     private final SecretKey signingKey;
 
+//    public JwtService(@Value("${jwt.secret}") String secret) {
+//        this.signingKey = Keys.hmacShaKeyFor(
+//                secret.getBytes(StandardCharsets.UTF_8)
+//        );
+//    }
+    
     public JwtService(@Value("${jwt.secret}") String secret) {
+
+        System.out.println("========== JWT DEBUG ==========");
+        System.out.println("JWT SECRET LENGTH = " + secret.length());
+        System.out.println("================================");
+
         this.signingKey = Keys.hmacShaKeyFor(
                 secret.getBytes(StandardCharsets.UTF_8)
         );
