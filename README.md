@@ -6,42 +6,61 @@ The project uses **React** for the frontend and **Java Spring Boot** for the bac
 
 ---
 
+## 🌐 Live Demo
+
+**Frontend:**  
+https://prepgeniusai-app.vercel.app
+
+**Backend:**  
+https://prepgenius-ai-java.onrender.com
+
+> The frontend is deployed on **Vercel**, while the Spring Boot backend is deployed on **Render**.
+
+---
+
 ## ✨ Features
 
-* 🔐 **User Authentication**
+### 🔐 User Authentication
 
-  * User registration and login
-  * JWT-based authentication
-  * BCrypt password encryption
-  * Secure API endpoints using Spring Security
+- User registration and login
+- JWT-based authentication
+- BCrypt password hashing
+- Secure API endpoints using Spring Security
+- Protected user-specific resources
 
-* 🤖 **AI-Powered Interview Questions**
+### 🤖 AI-Powered Interview Questions
 
-  * Generate interview questions using Google Gemini AI
-  * Questions based on selected technologies and topics
-  * Supports technical interview preparation
+- Generate interview questions using Google Gemini AI
+- Questions based on selected technologies and topics
+- Dynamic AI-generated interview preparation content
+- Technical interview preparation
 
-* 📝 **Interview Preparation**
+### 📝 Interview Preparation
 
-  * Practice technical interview questions
-  * Create interview preparation sessions
-  * Track questions and answers
+- Practice technical interview questions
+- Create interview preparation sessions
+- Track questions and answers
+- Prepare for different technical topics
 
-* 📊 **Session Management**
+### 📊 Session Management
 
-  * Create and manage interview sessions
-  * Store interview questions and responses
-  * Track preparation progress
+- Create and manage interview sessions
+- Store interview questions and responses
+- Track preparation progress
+- Retrieve session-specific data
 
-* 👤 **User Profile**
+### 👤 User Profile
 
-  * Secure user-specific data
-  * Retrieve authenticated user information
+- Secure user-specific data
+- Retrieve authenticated user information
+- JWT-based access to protected resources
 
-* 🌐 **RESTful API**
+### 🌐 RESTful API
 
-  * Backend APIs built using Spring Boot
-  * JSON-based request and response handling
+- Backend APIs built with Spring Boot
+- REST-based architecture
+- JSON request and response handling
+- API testing using Postman
 
 ---
 
@@ -49,77 +68,102 @@ The project uses **React** for the frontend and **Java Spring Boot** for the bac
 
 ### Frontend
 
-* React.js
-* Tailwind CSS
-* JavaScript
-* HTML5
-* CSS3
-* Axios
-* React Router
-* React Hot Toast
+- React.js
+- Vite
+- Tailwind CSS
+- JavaScript
+- HTML5
+- CSS3
+- Axios
+- React Router
+- React Hot Toast
 
 ### Backend
 
-* Java 25
-* Spring Boot 4
-* Spring Security
-* Spring Data MongoDB
-* REST API
-* JWT
-* BCrypt
-* Lombok
-* Maven
+- Java 25
+- Spring Boot 4
+- Spring Security
+- Spring Data MongoDB
+- REST API
+- JWT
+- BCrypt
+- Lombok
+- Maven
 
 ### Database
 
-* MongoDB
-* MongoDB Atlas / Local MongoDB
+- MongoDB Atlas
+- MongoDB Compass
 
 ### AI
 
-* Google Gemini API
+- Google Gemini API
 
 ### Development Tools
 
-* STS (Spring Tools Suite)
-* VS Code
-* Postman
-* MongoDB Compass / MongoDB Atlas
-* Git & GitHub
+- Spring Tools Suite (STS)
+- VS Code
+- Postman
+- MongoDB Compass
+- MongoDB Atlas
+- Git
+- GitHub
+
+### Deployment
+
+- Vercel — Frontend
+- Render — Backend
+- MongoDB Atlas — Database
 
 ---
 
 ## 🏗️ Project Architecture
 
 ```text
-                    ┌──────────────────────┐
-                    │      React.js        │
-                    │      Frontend        │
-                    └──────────┬───────────┘
-                               │
-                               │ REST API
-                               ▼
-                    ┌──────────────────────┐
-                    │     Spring Boot      │
-                    │       Backend        │
-                    └──────────┬───────────┘
-                               │
-              ┌────────────────┼────────────────┐
-              │                │                │
-              ▼                ▼                ▼
-       ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
-       │   MongoDB   │  │ JWT/Security│  │ Gemini API  │
-       │   Database  │  │             │  │     AI      │
-       └─────────────┘  └─────────────┘  └─────────────┘
-```
+                        ┌─────────────────────────┐
+                        │        Vercel           │
+                        │   React + Vite Frontend │
+                        └────────────┬────────────┘
+                                     │
+                                     │ HTTPS / REST API
+                                     ▼
+                        ┌─────────────────────────┐
+                        │         Render          │
+                        │    Spring Boot Backend  │
+                        └────────────┬────────────┘
+                                     │
+                  ┌──────────────────┼──────────────────┐
+                  │                  │                  │
+                  ▼                  ▼                  ▼
+          ┌──────────────┐   ┌──────────────┐   ┌──────────────┐
+          │ MongoDB      │   │    JWT /     │   │   Google     │
+          │    Atlas     │   │ Spring       │   │   Gemini AI  │
+          │              │   │ Security     │   │              │
+          └──────────────┘   └──────────────┘   └──────────────┘
 
 ---
 
+## Application Flow
+
+User
+ │
+ ▼
+React Frontend
+ │
+ │ REST API
+ ▼
+Spring Boot Backend
+ │
+ ├──────────────► MongoDB Atlas
+ │
+ ├──────────────► JWT / Spring Security
+ │
+ └──────────────► Google Gemini API
+ 
 ## 📂 Project Structure
 
 ### Backend
 
-```text
 backend/
 ├── src/
 │   └── main/
@@ -139,12 +183,11 @@ backend/
 │           └── application.properties
 │
 ├── pom.xml
+├── Dockerfile
 └── README.md
-```
 
 ### Frontend
 
-```text
 frontend/
 ├── src/
 │   ├── components/
@@ -156,25 +199,26 @@ frontend/
 ├── public/
 ├── package.json
 └── README.md
-```
 
 ---
 
 ## 🔐 Authentication Flow
 
-PrepGenius AI uses **JWT-based authentication**.
+PrepGenius AI uses JWT-based authentication with Spring Security.
 
-```text
 User
  │
  ▼
 Register / Login
  │
  ▼
-Spring Security
+Spring Boot Authentication API
  │
  ▼
 Validate Credentials
+ │
+ ▼
+BCrypt Password Verification
  │
  ▼
 Generate JWT
@@ -183,14 +227,16 @@ Generate JWT
 Frontend Stores Token
  │
  ▼
-Token Sent with API Requests
+Token Sent with Protected API Requests
  │
  ▼
-JWT Validation
+JWT Authentication Filter
+ │
+ ▼
+Validate JWT
  │
  ▼
 Protected API Access
-```
 
 Passwords are securely hashed using **BCrypt** before being stored in MongoDB.
 
@@ -198,55 +244,60 @@ Passwords are securely hashed using **BCrypt** before being stored in MongoDB.
 
 ## 🤖 AI Question Generation
 
-The application integrates the **Google Gemini API** to generate interview questions dynamically.
+The application integrates the Google Gemini API to dynamically generate interview questions.
 
 Example flow:
 
-```text
-User selects:
-Java + Spring Boot + MongoDB
-              │
-              ▼
-        Backend API
-              │
-              ▼
-        Gemini AI API
-              │
-              ▼
-     Generated Questions
-              │
-              ▼
-           MongoDB
-              │
-              ▼
-           Frontend
-```
+User selects technologies/topics
+          │
+          ▼
+     React Frontend
+          │
+          ▼
+    Spring Boot API
+          │
+          ▼
+     Google Gemini
+          │
+          ▼
+ Generated Questions
+          │
+          ▼
+      MongoDB
+          │
+          ▼
+     React Frontend
 
 ---
 
 ## ⚙️ Environment Variables
 
-Create an environment configuration for sensitive information.
+Sensitive credentials are not stored directly in the source code.
 
-Example:
+### Backend
+
+The Spring Boot backend uses environment variables for:
 
 ```env
-MONGODB_URI=mongodb://localhost:27017/prepgenius
+MONGODB_URI=your-mongodb-url
 JWT_SECRET=your-secret-key
 GEMINI_API_KEY=your-gemini-api-key
+PORT=your-port
 ```
 
-> ⚠️ Never commit API keys, JWT secrets, passwords, or other sensitive credentials to GitHub.
+Example application.properties configuration:
 
-Add sensitive configuration files to `.gitignore`.
+spring.mongodb.uri=${MONGO_URI}
+jwt.secret=${JWT_SECRET}
+gemini.api-key=${GEMINI_API_KEY}
+server.port=${PORT}
 
-Example:
+### Frontend
 
-```gitignore
-.env
-application-local.properties
-target/
-node_modules/
+The React/Vite frontend uses:
+
+```env
+VITE_API_BASE_URL=https://prepgenius-ai-java.onrender.com
 ```
 
 ---
@@ -256,7 +307,7 @@ node_modules/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/prepgenius-ai.git
+git clone https://github.com/NARESHGUPTA0912/PrepGenius-AI.git
 ```
 
 ```bash
@@ -357,6 +408,8 @@ The project implements:
 * Protected REST endpoints
 * User-specific data access
 * Environment-based secret configuration
+* CORS configuration for the production frontend
+* Stateless authentication
 
 ---
 
@@ -370,7 +423,7 @@ The backend is automatically built using:
 - Maven
 - Spring Boot
 
-Every push and pull request to the `main` branch triggers the Maven build workflow.
+The CI workflow can automatically build the project when changes are pushed to the repository.
 
 ---
 
@@ -390,25 +443,12 @@ Every push and pull request to the `main` branch triggers the Maven build workfl
 
 ## 📸 Screenshots
 
-Add screenshots of the application here.
-
-Example:
-
-```text
-docs/
-├── landing-page.png
-├── login.png
-├── dashboard.png
-├── interview-prep.png
-└── interview-session.png
-```
-
-Then add them to the README:
-
 ```markdown
-![Landing Page](docs/landing-page.png)
-![Dashboard](docs/dashboard.png)
-![Interview Preparation](docs/interview-prep.png)
+![Landing Page](screenshots/LandingPage.png)
+![SignUp Page](screenshots/SignUp.png)
+![LogIn Page](screenshots/LogIn.png)
+![Dashboard](screenshots/Dashboard.png)
+![Interview Preparation](screenshots/InterviewSession.png)
 ```
 
 ---
@@ -424,10 +464,15 @@ This project was developed to gain practical experience with:
 * REST API Development
 * MongoDB
 * React.js
+* Vite
 * AI API Integration
 * Full-Stack Development
 * Git & GitHub
-* API Testing with Postman
+* Postman API Testing
+* Cloud Deployment
+* Environment-Based Configuration
+* Frontend–Backend Integration
+* CORS Configuration
 
 ---
 
