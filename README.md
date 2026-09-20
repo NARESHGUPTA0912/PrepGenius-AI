@@ -206,6 +206,7 @@ frontend/
 
 ## 🔐 Authentication Flow
 
+```text
 PrepGenius AI uses JWT-based authentication with Spring Security.
 
 User
@@ -242,13 +243,13 @@ Protected API Access
 
 Passwords are securely hashed using **BCrypt** before being stored in MongoDB.
 
----
+```
 
 ## 🤖 AI Question Generation
 
 The application integrates the Google Gemini API to dynamically generate interview questions.
 
-Example flow:
+```text
 
 User selects technologies/topics
           │
@@ -270,7 +271,7 @@ User selects technologies/topics
           ▼
      React Frontend
 
----
+```
 
 ## ⚙️ Environment Variables
 
@@ -301,6 +302,16 @@ The React/Vite frontend uses:
 ```env
 VITE_API_BASE_URL=https://prepgenius-ai-java.onrender.com
 ```
+
+## 📸 Screenshots
+
+![Landing Page](screenshots/LandingPage.png)
+![SignUp Page](screenshots/SignUp.png)
+![LogIn Page](screenshots/LogIn.png)
+![Dashboard](screenshots/Dashboard.png)
+![Interview Preparation](screenshots/InterviewSession.png)
+
+---
 
 ---
 
@@ -440,16 +451,6 @@ The CI workflow can automatically build the project when changes are pushed to t
 * 🏆 Leaderboards and achievements
 * 🌍 Deployment with CI/CD
 * 📱 Responsive mobile UI
-
----
-
-## 📸 Screenshots
-
-![Landing Page](screenshots/LandingPage.png)
-![SignUp Page](screenshots/SignUp.png)
-![LogIn Page](screenshots/LogIn.png)
-![Dashboard](screenshots/Dashboard.png)
-![Interview Preparation](screenshots/InterviewSession.png)
 
 ---
 
