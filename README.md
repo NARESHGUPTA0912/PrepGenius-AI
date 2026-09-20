@@ -141,9 +141,8 @@ https://prepgenius-ai-java.onrender.com
           │              │   │ Security     │   │              │
           └──────────────┘   └──────────────┘   └──────────────┘
 
----
 
-## Application Flow
+Application Flow
 
 User
  │
@@ -159,9 +158,12 @@ Spring Boot Backend
  ├──────────────► JWT / Spring Security
  │
  └──────────────► Google Gemini API
+
+```
  
 ## 📂 Project Structure
 
+```text
 ### Backend
 
 backend/
@@ -200,7 +202,7 @@ frontend/
 ├── package.json
 └── README.md
 
----
+```
 
 ## 🔐 Authentication Flow
 
@@ -443,13 +445,11 @@ The CI workflow can automatically build the project when changes are pushed to t
 
 ## 📸 Screenshots
 
-```markdown
 ![Landing Page](screenshots/LandingPage.png)
 ![SignUp Page](screenshots/SignUp.png)
 ![LogIn Page](screenshots/LogIn.png)
 ![Dashboard](screenshots/Dashboard.png)
 ![Interview Preparation](screenshots/InterviewSession.png)
-```
 
 ---
 
